@@ -4,4 +4,14 @@ stages:
     deps:
     - src/data_ingestion.py
     outs:
-    - data/raw
+    - Data/raw
+
+  preprocessing_and_buliding:
+   cmd: python src/data_preprocessing.py
+   deps:
+   - Data/raw/X_train.csv
+   - Data/raw/y_train.csv
+   - Data/raw/X_test.csv
+   - Data/raw/y_test.csv
+   - src/data_preprocessing.py
+   

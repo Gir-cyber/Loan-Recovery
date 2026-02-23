@@ -1,4 +1,5 @@
 pandas
+joblib
 numpy
 seaborn
 matplotlib
@@ -6,4 +7,5 @@ scikit-learn
 xgboost
 fastapi
 dvc
+streamlit
 -e .

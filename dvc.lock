@@ -5,11 +5,34 @@ stages:
     deps:
     - path: src/data_ingestion.py
       hash: md5
-      md5: ae650912897921e2a1f46195d2c3094d
-      size: 2620
+      md5: a944ff4c7f9bff76976f9fb0aed2ddc5
+      size: 2637
     outs:
-    - path: data/raw
+    - path: Data/raw
       hash: md5
-      md5: a4ea46c9e408dfca8a5df374ff2719d5.dir
-      size: 7331827
+      md5: 82263f8d967ed60d4b28aac619e75fb2.dir
+      size: 7331829
       nfiles: 4
+  preprocessing_and_buliding:
+    cmd: python src/data_preprocessing.py
+    deps:
+    - path: Data/raw/X_test.csv
+      hash: md5
+      md5: 1d2a886d7623962d1ab7969731e75cc4
+      size: 1375956
+    - path: Data/raw/X_train.csv
+      hash: md5
+      md5: 9590bf4c9d77531463a7887f8906bb28
+      size: 5505839
+    - path: Data/raw/y_test.csv
+      hash: md5
+      md5: 9e2b9947d880958ff895d221faef7905
+      size: 90017
+    - path: Data/raw/y_train.csv
+      hash: md5
+      md5: 17edab5d2c5ca30173c98737ef58c313
+      size: 360017
+    - path: src/data_preprocessing.py
+      hash: md5
+      md5: d3532c29e9743fa9216e22402145a72b
+      size: 3329

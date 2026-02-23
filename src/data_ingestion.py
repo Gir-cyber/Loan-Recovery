@@ -26,7 +26,7 @@ def preprocess_data(df:pd.DataFrame):
                 "RevolvingUtilizationOfUnsecuredLines": "Credit_Utilization",
                 "age": "Age",
                 "NumberOfTime30-59DaysPastDueNotWorse": "Past_Due30_59",
-                "DebtRatio": "Debt_IncomeRatio",
+                "DebtRatio": "Debt_Income_Ratio",
                 "MonthlyIncome": "Monthly_Income",
                 "NumberOfOpenCreditLinesAndLoans": "Open_Credit_Lines",
                 "NumberOfTimes90DaysLate": "Past_Due90",
@@ -45,10 +45,10 @@ def save_data(X_train:pd.DataFrame, X_test:pd.DataFrame, y_train:pd.DataFrame, y
         raw_data_path = os.path.join(data_path, "raw")
         os.makedirs(raw_data_path, exist_ok=True)
 
-        X_train.to_csv(os.path.join(raw_data_path, "X_train"), index=False)
-        X_test.to_csv(os.path.join(raw_data_path, "X_test"), index=False)
-        y_train.to_csv(os.path.join(raw_data_path, "y_train"), index=False)
-        y_test.to_csv(os.path.join(raw_data_path, "y_test"), index=False)
+        X_train.to_csv(os.path.join(raw_data_path, "X_train.csv"), index=False)
+        X_test.to_csv(os.path.join(raw_data_path, "X_test.csv"), index=False)
+        y_train.to_csv(os.path.join(raw_data_path, "y_train.csv"), index=False)
+        y_test.to_csv(os.path.join(raw_data_path, "y_test.csv"), index=False)
 
         logging.info("train and test data saved")
     except Exception as e:
